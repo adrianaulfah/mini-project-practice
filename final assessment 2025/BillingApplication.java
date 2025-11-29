@@ -13,6 +13,7 @@ public class BillingApplication {
     public static JPanel mainPanel;
     public static CardLayout cards;
 
+    // Play sound effect for button clicks
     public static void playClickSound() {
     try {
         File soundFile = new File("C:\\Users\\adriana\\Downloads\\VSC\\java\\final assessment 2025\\Click.wav");
@@ -25,6 +26,7 @@ public class BillingApplication {
     }
 }
 
+// Create button with sound effect and custom styling
 public static JButton createButtonWithSound(String text, ActionListener action) {
     JButton button = new JButton(text);
     button.setBackground(PURPLE_BUTTON);
@@ -46,10 +48,13 @@ public static JButton createButtonWithSound(String text, ActionListener action) 
     public static final Color PURPLE_FIELD = new Color(200, 180, 255);
     public static Image backgroundImage;
 
+    // Music player for background music
     public static MusicPlayer musicPlayer = new MusicPlayer();
 
+    // Main application entry point
     public static void main(String[] args) {
 
+    // Start background music
     musicPlayer.playBackgroundMusic("C:\\Users\\adriana\\Downloads\\VSC\\java\\final assessment 2025\\jazzlofi.wav");
 
 
@@ -60,6 +65,7 @@ public static JButton createButtonWithSound(String text, ActionListener action) 
         new BillingApplication();
     });
 
+        // Load background image
         try {
             backgroundImage = new ImageIcon("background.jpg").getImage();
         } catch (Exception e) {
@@ -71,7 +77,7 @@ public static JButton createButtonWithSound(String text, ActionListener action) 
         window.setSize(800, 600);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        // Create card layout
+        // Create card layout for panel navigation
         cards = new CardLayout();
         mainPanel = new JPanel(cards);
         mainPanel.setBackground(Color.YELLOW);
@@ -98,4 +104,4 @@ public static JButton createButtonWithSound(String text, ActionListener action) 
         window.add(mainPanel);
         window.setVisible(true);
     } 
-}  
+}
